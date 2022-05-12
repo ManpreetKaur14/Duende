@@ -17,7 +17,7 @@ export function Button() {
 
   window.addEventListener('scroll', changeNavbar);
   return (
-    <Link to='sign-up'>
+    <Link to='/signup'  target="_blank">
       <button className={navbar ? 'btn active' : 'btn'}>Launch App</button>
     </Link>
   );
