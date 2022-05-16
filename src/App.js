@@ -1,20 +1,23 @@
 import React from 'react';
+import "react-accessible-accordion/dist/fancy-example.css";
 import Navbar from './components/LandingPage/Navbar';
 import './App.css';
-import Home from './components/LandingPage/Home';
+import Home from './pages/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Services from './components/pages/Services';
-import Products from './components/pages/Products';
-
+import FaqPage from './pages/FaqPage/FaqPage'
+import TermsPage from './pages/TermsPage/TermsPage'
+import PolicyPage from './pages/PolicyPage/PolicyPage'
+import About from './components/LandingPage/AboutDuende'
 function App() {
   return (
     <Router>
       <Navbar />
       <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/services' component={Services} />
-        <Route path='/products' component={Products} />
-        {/* <Route path='/signup' component={SignUp} /> */}
+        <Route path='/home' exact component={Home} />
+        <Route path='/about' exact component={About} />
+        <Route path='/faq' exact component={FaqPage} />
+        <Route path='/terms' exact component={TermsPage} />
+        <Route path='/policy' exact component={PolicyPage} />
       </Switch>
     </Router>
   )

@@ -2,8 +2,8 @@
 import React, {useState } from 'react';
 // import Video from 'react';
 import '../../App.css';
-import apple from '../images/applepay.png';
-import google from '../images/googlepay.png';
+import apple from '../../images/applepay.png';
+import google from '../../images/googlepay.png';
 
 import './HeroSection.css';
 

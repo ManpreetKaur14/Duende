@@ -1,6 +1,6 @@
 import React from 'react'
 import './AboutDuende.css'
-import pic from '../images/pic1.svg'
+import pic from '../../images/pic1.svg'
 function About()
 {
   return(

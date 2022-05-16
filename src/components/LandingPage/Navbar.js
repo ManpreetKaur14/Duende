@@ -1,186 +1,144 @@
-import React, { useState } from 'react';
-import { Button } from './Button';
-import { Link } from 'react-router-dom';
-import './Navbar.css';
-import './Button.css'
-import Dropdown from './Dropdown';
-import Dropdown2 from './Dropdown2';
-
+// import React from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "../../images/logo.svg";
+import styles from "../../styles/Navbar.module.css";
 function Navbar() {
-  const [click, setClick] = useState(false);
-  const[click2,setClick2] =useState(false);
-  const [navbar, setNavbar] = useState(false);
 
-  const [dropdown, setDropdown] = useState(false);
-  
-  const [dropdown2, setDropdown2] = useState(false);
+  // OPEN SIDEBAR
+  const [openNav, setOpenNav] = useState(false);
 
-  const handleClick = function(){ setClick(!click); setNavbar(!navbar);}
-  const handleClick2 = () => setClick2(!click2);
-  const closeMobileMenu = () => setClick(false);
+  // OPEN DuendeWorld LIST
+  const [openDuendeWorldList, setOpenDuendeWorldList] = useState(false);
 
-  const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
+  // OPEN Legal LIST
+  const [openLegalList, setOpenLegalList] = useState(false);
+
+
+  // Change Navbar Bg Color on Scroll
+  const [navBar, setNavBar] = useState(false);
+
+  const navBarBg = () => {
+    if (window.scrollY >= 10) {
+      setNavBar(true);
     } else {
-      setDropdown(true);
-    }
-  };
-  const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(false);
+      setNavBar(false);
     }
   };
 
-  const onMouseEnter2 = () => {
-    if (window.innerWidth < 960) {
-      setDropdown2(false);
-    } else {
-      setDropdown2(true);
-    }
-  };
-  const onMouseLeave2 = () => {
-    if (window.innerWidth < 960) {
-      setDropdown2(false);
-    } else {
-      setDropdown2(false);
-    }
-  };
+  window.addEventListener("scroll", navBarBg);
+ 
 
-  const changeNavbar = () => {
-    if(window.scrollY >= 80 ) 
-    {
-      setNavbar(true);
-    }
-    else
-    {
-      setNavbar(false);
-    }
-  };
-
-  window.addEventListener('scroll', changeNavbar);
   return (
     <>
-      <nav className={navbar ? 'navbar active' : 'navbar'}>
-        <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-          <img className='logo' src={require('../images/logo.png')} alt='logo' />
-        </Link>
-        <div className='menu-icon'>
-          <i className={click ? 'fas fa-times'  : 'fas fa-bars'}  onClick={() => {
-          handleClick();
-          // setNavbar(true);
-        }}/>
-
-        </div>
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <li className='nav-item'>
-            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-              About
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link
-              to='/contact-us'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              FAQ
-            </Link>
-          </li>
-          <li className='nav-item side'>
-            <Link
-              to='/contact-us'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Whitepaper
-            </Link>
-          </li>
-          <li className='nav-item side'>
-            <Link
-              to='/contact-us'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Token Contract Address
-            </Link>
-          </li>
-          <li className='nav-item side'>
-            <Link
-              to='/contact-us'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Three.js
-            </Link>
-          </li>
-          <li className='nav-item side'>
-            <Link
-              to='/contact-us'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Proof of Payment Stream
-            </Link>
-          </li>
-          <li className='nav-item side'>
-            <Link
-              to='/contact-us'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Terms of Services
-            </Link>
-            <Link
-              to='/contact-us'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Privacy Policy
-            </Link>
-          </li>
-          <li
-            className='nav-item hide'
-  
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
+    {/* NAVBAR */}
+      <nav
+        className={
+          navBar ? `${styles.D_navbar} ${styles.active}` : `${styles.D_navbar}`
+        }
+      >
+        <div className="container">
+          <div
+            className={
+              navBar ? `${styles.inner} ${styles.active}` : `${styles.inner}`
+            }
           >
-            <Link
-              className='nav-links '
-              onClick={closeMobileMenu}
+            {/* LOGO */}
+            <div
+              className={
+                navBar ? `${styles.logo} ${styles.active}` : `${styles.logo}`
+              }
             >
-             Duende World  <i className='fas fa-caret-down' />
-            </Link>
-            {dropdown && <Dropdown />}
-          </li>
-          <li 
-          className='nav-item hide'
-          onMouseEnter={onMouseEnter2}
-          onMouseLeave={onMouseLeave2}
+              <Link to={`/home`}>
+              <img src={logo} alt="logo" className="logo_img"/>
+              </Link>
+            </div>
+
+            <div
+              className={
+                openNav ? `${styles.links} ${styles.active}` : `${styles.links}`
+              }
             >
-            <Link
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Legal <i className='fas fa-caret-down' />
-            </Link>
-            {dropdown2 && <Dropdown2 />}
-          </li>
-          
-          <li>
-            <Link
-              to='/signup'
-              target="_blank"
-              className='nav-links-mobile'
-              onClick={closeMobileMenu}
-            >
+              {/* LINKS */}
+              <ul
+                className={
+                  navBar
+                    ? `${styles.navbar_list} ${styles.active}`
+                    : `${styles.navbar_list}`
+                }
+              >
+                <li> <Link to={`/about`}>About</Link></li>
+                <li>
+                  <Link to={`/faq`}>FAQ</Link>
+                </li>
+                <li
+                  onClick={() => setOpenDuendeWorldList(!openDuendeWorldList)}
+                >
+                  <span>
+                    Duende World<i className="fa fa-angle-down"></i>
+                    <div
+                      className={
+                        openDuendeWorldList
+                          ? `${styles.holder_hidden_list} ${styles.active}`
+                          : `${styles.holder_hidden_list}`
+                      }
+                    >
+                      {/* HIDDEN LIST */}
+                      <ul className={styles.hidden_list}>
+                      <li> <Link to={`/about`}>Whitepaper</Link></li>
+                      <li> <Link to={`https://polygonscan.com/token/0x5e4ab6b3d3b3a8e61b3a58594a4a2ed9d614f604`}>Token Contract Address</Link></li>
+                      <li> <Link to={`/about`}>Three.js</Link></li>
+                      <li> <Link to={`/about`}>Proof of Payment Stream</Link></li>
+
+                      </ul>
+                    </div>
+                  </span>
+                </li>
+                <li onClick={() => setOpenLegalList(!openLegalList)}>
+                  <span>
+                    Legal<i className="fa fa-angle-down"></i>
+                    <div
+                      className={
+                        openLegalList
+                          ? `${styles.holder_hidden_list} ${styles.active}`
+                          : `${styles.holder_hidden_list}`
+                      }
+                    >
+                      {/* HIDDEN LIST */}
+                      <ul className={styles.hidden_list}>
+                      <li> <Link to={`/terms`}>Terms of Services</Link></li>
+                      <li> <Link to={`/policy`}>Privacy Policy</Link></li>
+                      </ul>
+                    </div>
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* BUTTON */}
+            <button className={navBar ? `button ${styles.active}` : `button`}>
               Launch App
-            </Link>
-          </li>
-        </ul>
-        <Button />
+            </button>
+
+            {/* HAMBURGER */}
+            <div class={styles.hamburger} onClick={() => setOpenNav(!openNav)}>
+              <input class={styles.checkbox} type="checkbox" />
+              <div
+                class={
+                  openNav
+                    ? `${styles.hamburger_lines} ${styles.active}`
+                    : `${styles.hamburger_lines}` && navBar
+                    ? `${styles.hamburger_lines} ${styles.color_active}`
+                    : `${styles.hamburger_lines}`
+                }
+              >
+                <span class={`${styles.line} ${styles.line1}`}></span>
+                <span class={`${styles.line} ${styles.line2}`}></span>
+                <span class={`${styles.line} ${styles.line3}`}></span>
+              </div>
+            </div>
+          </div>
+        </div>
       </nav>
     </>
   );

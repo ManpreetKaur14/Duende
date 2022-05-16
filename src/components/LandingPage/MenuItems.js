@@ -1,9 +1,9 @@
-import aderess from '../images/aderess.png';
-import threejs from '../images/threejs.png';
-import payment from '../images/payment.png';
-import whitepaper from '../images/whitepaper.png'
-import services from '../images/services.png'
-import policy from '../images/policy.png'
+import aderess from '../../images/aderess.png';
+import threejs from '../../images/threejs.png';
+import payment from '../../images/payment.png';
+import whitepaper from '../../images/whitepaper.png'
+import services from '../../images/services.png'
+import policy from '../../images/policy.png'
 
 
 
@@ -39,7 +39,7 @@ export const MenuItems2 = [
   {
     src:services,
     title: 'Terms of Services',
-    // path: '/TermsofServices',
+    path: '/terms',
     cName: 'dropdown-link'
   },
   {
