@@ -49,7 +49,7 @@ function Navbar() {
                 navBar ? `${styles.logo} ${styles.active}` : `${styles.logo}`
               }
             >
-              <Link to={`/home`}>
+              <Link to={`/`}>
               <img src={logo} alt="logo" className="logo_img"/>
               </Link>
             </div>
@@ -85,8 +85,8 @@ function Navbar() {
                     >
                       {/* HIDDEN LIST */}
                       <ul className={styles.hidden_list}>
-                      <li> <Link to={`/about`}>Whitepaper</Link></li>
-                      <li> <Link to={`https://polygonscan.com/token/0x5e4ab6b3d3b3a8e61b3a58594a4a2ed9d614f604`}>Token Contract Address</Link></li>
+                      <li> <Link to={{ pathname: "https://polygonscan.com/token/0x5e4ab6b3d3b3a8e61b3a58594a4a2ed9d614f604" }} target="_blank" >Whitepaper</Link></li>
+                      <li> <Link to={{ pathname: "https://polygonscan.com/token/0x5e4ab6b3d3b3a8e61b3a58594a4a2ed9d614f604" }} target="_blank">Token Contract Address</Link></li>
                       <li> <Link to={`/about`}>Three.js</Link></li>
                       <li> <Link to={`/about`}>Proof of Payment Stream</Link></li>
 
@@ -117,7 +117,7 @@ function Navbar() {
 
             {/* BUTTON */}
             <button className={navBar ? `button ${styles.active}` : `button`}>
-              Launch App
+              <Link to="signup">Launch App</Link>
             </button>
 
             {/* HAMBURGER */}
