@@ -1,24 +1,43 @@
 // import React from 'react';
 import React, {useState } from 'react';
-// import Video from 'react';
+import ReactPlayer from 'react-player';
 import '../../App.css';
+import { Link } from 'react-router-dom';
 import apple from '../../images/applepay.png';
 import google from '../../images/googlepay.png';
-
 import './HeroSection.css';
 
 
 function HeroSection() {
   const [click1, setClick1] = useState(false);
   const[click2,setClick2] =useState(false);
-  const handleClick1 = () => setClick1(!click1);
-  const handleClick2 = () => setClick2(!click2);
-    
+  
+  const [state,setState] = useState({
+    playing:true,
+    muted:true
+  })
+  const {playing,muted} = state
+
+  const handlePlayPause = ()=>{
+    setState({ ...state, playing: !state.playing });
+  };
+
+  const handleMuteUnMute = ()=>{
+    setState({ ...state, muted: !state.muted});
+  };
 
   return (
     <div className='hero-container'>
       <div className='video-container'>
-    <video src='/videos/introduction.mp4' autoPlay loop muted/>
+        <ReactPlayer 
+        className='vdo'
+        width="100%"
+        height="100%"
+        loop={true}
+        url='/videos/introduction.mp4' 
+        muted={muted} 
+        playing={playing}
+        />
     </div>
       <h1>What your nationality is,</h1>
       <div className='bottom-section'>
@@ -27,18 +46,14 @@ function HeroSection() {
       <img className='downloadBtn' src={apple} alt='Get It On Google Pay' />
       </div>
       <div className="play-pause-container" >
-        <div className="play-pause-button" onClick={handleClick1}>
-        <i className={click1 ? 'fa-solid fa-play': 'fa-solid fa-pause'}
+        <div className="play-pause-button" onClick={handlePlayPause}>
+        <i className={playing ? 'fa-solid fa-pause': 'fa-solid fa-play'}
         />
         </div>
-        <div className="mute-unmute-button" onClick={handleClick2}>
-        <i className={click2 ? 'fa-solid fa-volume-up': 'fa-solid fa-volume-mute'}
+        <div className="mute-unmute-button" onClick={handleMuteUnMute}>
+        <i className={muted ? 'fa-solid fa-volume-mute': 'fa-solid fa-volume-up'}
         />
         </div>
-
-    
-      {/* <i className={click1 ? 'fa-solid fa-play': 'fa-solid fa-pause'} onClick={() => { handleClick1();}}/> 
-      <i className={click2 ? 'fa-solid fa-volume-xmark' : 'fa-solid fa-volume-high'} onClick={() => { handleClick2();}}/>  */}
       </div>
       </div>
     </div>

@@ -1,19 +1,19 @@
 .video-container{
   position: absolute;
-  top: 0;
   bottom: 0;
+  padding-top: 56.25%;
   width: 100%;
   height: 100%; 
   overflow: hidden;
 }
-.video-container video{
-  min-width: 100%; 
-  min-height: 100%; 
-  width: auto;
-  height: auto;
+ .vdo{
+  position: absolute;
+  top: 0;
+  left: 0;
+;
 }
   .hero-container {
-  height: 100vh;
+  /* height: 100vh; */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -65,7 +65,7 @@
     display: flex;
   }
   .mute-unmute-button, .play-pause-button{
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.5);
     padding: 25px;
     border-radius: 50%;
     margin-right: 12px;
@@ -77,46 +77,16 @@
     justify-content: center;
     align-items: center;
   }
-  .play-pause-button:hover, .mute-unmute-button:hover{
+  /* .play-pause-button:hover, .mute-unmute-button:hover{
     background: rgba(255, 255, 255, 0.226)
-  }
+  } */
   .fa-pause, .fa-play, .fa-volume-up, .fa-volume-mute{
-    font-size:18px;
-    color: rgb(190, 190, 190);
+    font-size:22px;
+    color: #fff;
     padding: 25px;
     border-radius: 50%;
   }
-  
-  .fa-pause:hover, .fa-play:hover, .fa-volume-up:hover, .fa-volume-mute:hover{
-    color: #fff;
- 
-  }
-  
-  
-  @media screen and (max-width: 960px) {
-    .hero-container > h1 {
-      font-size: 50px;
-      margin-top: -150px;
-    }
-    .mute-unmute-button, .play-pause-button{
-      background: rgba(255, 255, 255, 0.1);
-      padding: 15px;
-      border-radius: 50%;
-      margin: 8px;
-      height: 15px;
-      width: 15px;
-    }
-    .fa-pause, .fa-play, .fa-volume-up, .fa-volume-mute{
-      font-size:15px;
-      color: rgb(190, 190, 190);
-      padding: 25px;
-      border-radius: 50%;
-    }
-    .play-pause-container{
-      margin-right:20px ;
-    }
-  
-  }
+
   
   @media screen and (max-width: 768px) {
     .hero-container > h1 {
