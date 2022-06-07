@@ -1,5 +1,5 @@
 import React from "react";
-import "./../styles/Signin.css"
+import "./../styles/SignIn.css"
 import Logo from "./../images/logo.svg";
 import ELFS from "./../images/ELFS.png";
 const WelcomeSection = () => {

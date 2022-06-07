@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import mailbox from "./../../images/Group 1.png";
 import OtpInput from "react-otp-input";
-import "./../../styles/Signin.css"
+import "./../../styles/SignIn.css"
 import Modal from "react-modal";
 const customStyles = {
   content: {
