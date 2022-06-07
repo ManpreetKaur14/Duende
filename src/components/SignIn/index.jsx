@@ -1,7 +1,6 @@
 import React from "react";
 import SignInForm from "./SignInForm";
-import  "../../styles/SignIn.css"
-import WelcomeSection from "../SignIn/WelcomeSection";
+import WelcomeSection from "./../WelcomeSection";
 
 const SignIn = () => {
   return (

@@ -1,7 +1,6 @@
 import React from "react";
-import  "../../styles/SignIn.css"
 import SignUpForm from "./SignUpForm";
-import WelcomeSection from "../SignIn/WelcomeSection";
+import WelcomeSection from "./../WelcomeSection";
 import OtpModal from "./OtpModal";
 
 const SignUp = () => {
