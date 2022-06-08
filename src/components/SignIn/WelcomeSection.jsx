@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "./../../images/logo.svg";
 import ELFS from "./../../images/ELFS.png";
-import "./../../styles/Signin.css"
+import "./../../styles/SignIn.css"
 const WelcomeSection = () => {
   return (
     <div className="left-section relative">

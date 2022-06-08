@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import '../styles/SignIn.css'
+import "./../styles/SignIn.css"
 import Logo from "./../images/logo.svg";
 import ELFS from "./../images/ELFS.png";
 const WelcomeSection = () => {
