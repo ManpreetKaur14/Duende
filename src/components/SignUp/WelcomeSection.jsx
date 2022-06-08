@@ -7,7 +7,9 @@ const WelcomeSection = () => {
     <div className="left-section relative">
       <div>
         <div>
-          <img src={Logo} alt="logo" className="duende-logo" />
+        <Link to={`/`}>
+              <img src={Logo} alt="logo" className="duende-logo"/>
+              </Link>
         </div>
         <h2 className="Signup-heading">Hello Again!</h2>
         <p className="signup-subHeading">Welcome back you’ve been missed</p>

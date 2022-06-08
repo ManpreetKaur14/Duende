@@ -1,5 +1,6 @@
 import React from "react";
-import "./../styles/Signin.css"
+import { Link } from "react-router-dom";
+import '../styles/SignIn.css'
 import Logo from "./../images/logo.svg";
 import ELFS from "./../images/ELFS.png";
 const WelcomeSection = () => {
@@ -7,7 +8,9 @@ const WelcomeSection = () => {
     <div className="left-section relative">
       <div>
         <div>
-          <img src={Logo} alt="logo" className="duende-logo" />
+        <Link to={`/`}>
+              <img src={Logo} alt="logo" className="duende-logo"/>
+              </Link>
         </div>
         <h2 className="Signup-heading">Hello Again!</h2>
         <p className="signup-subHeading">Welcome back you’ve been missed</p>
