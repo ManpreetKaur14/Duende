@@ -56,22 +56,34 @@ function HeroSection() {
 
           <div className="hero-social-icons">
           <div className="hs_icon">
-            <img src={linkedin} alt="linkedin-icon"/>
+          <a href={ "https://www.linkedin.com/company/duende4world/" } target="_blank">
+          <img src={linkedin} alt="linkedin-icon"/>
+          </a>
           </div>
           <div className="hs_icon">
-            <img src={discord} alt="discord-icon"/>
+          <a href={ "https://www.linkedin.com/company/duende4world/" } target="_blank">
+          <img src={discord} alt="discord-icon"/>
+          </a>
           </div>
           <div className="hs_icon">
-            <img src={tiktok} alt="tiktok-icon"/>
+          <a href={ "https://www.linkedin.com/company/duende4world/" } target="_blank">
+          <img src={tiktok} alt="tiktok-icon" />
+          </a>
           </div>
           <div className="hs_icon">
-            <img src={twitter} alt="twitter-icon"/>
+          <a href={ "https://www.linkedin.com/company/duende4world/" } target="_blank">
+          <img src={twitter} alt="twitter-icon"/>
+          </a>
           </div>
           <div className="hs_icon">
-            <img src={instagram} alt="instagram-icon"/>
+          <a href={ "https://www.linkedin.com/company/duende4world/" } target="_blank">
+          <img src={instagram} alt="instagram-icon"/>
+          </a>
           </div>
           <div className="hs_icon">
-            <img src={youTube} alt="youTube-icon"/>
+          <a href={ "https://www.linkedin.com/company/duende4world/" } target="_blank">
+          <img src={youTube} alt="youTube-icon"/>
+          </a>
           </div>
           </div>
         </div>

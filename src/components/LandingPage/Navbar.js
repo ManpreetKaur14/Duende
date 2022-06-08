@@ -117,7 +117,7 @@ function Navbar() {
 
             {/* BUTTON */}
             <button className={navBar ? `button ${styles.active}` : `button`}>
-              <Link to="signup" target="_blank">Launch App</Link>
+              <Link to="signin" target="_blank">Launch App</Link>
             </button>
 
             {/* HAMBURGER */}
