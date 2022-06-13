@@ -32,8 +32,11 @@ function HeroSection() {
   };
 
   return (
-    <div className="hero-container">
-      <div className="video-container">
+
+    
+    <main className="mt-5 mb-5">
+        <div className="container">
+        <div className="hero-container">
         <ReactPlayer
           className="vdo"
           width="100%"
@@ -43,15 +46,16 @@ function HeroSection() {
           muted={muted}
           playing={playing}
         />
-      </div>
-      <h1>What your nationality is,</h1>
-      <div className="bottom-section">
+          <h1>What your nationality is,</h1>
+          <div className="bottom-section">
         <div className="hero-buttons">
+          <a href={ "https://play.google.com/store/apps/details?id=com.Duende.Duende" } target="_blank">
           <img
             className="downloadBtn"
             src={google}
             alt="Get It On Google Pay"
           />
+          </a>
           <img className="downloadBtn" src={apple} alt="Get It On Google Pay" />
 
           <div className="hero-social-icons">
@@ -61,27 +65,27 @@ function HeroSection() {
           </a>
           </div>
           <div className="hs_icon">
-          <a href={ "https://www.linkedin.com/company/duende4world/" } target="_blank">
+          <a href={ "https://discord.com/invite/hkJ62P2uCz" } target="_blank">
           <img src={discord} alt="discord-icon"/>
           </a>
           </div>
           <div className="hs_icon">
-          <a href={ "https://www.linkedin.com/company/duende4world/" } target="_blank">
+          <a href={ "https://tiktok.com/@duende4world" } target="_blank">
           <img src={tiktok} alt="tiktok-icon" />
           </a>
           </div>
           <div className="hs_icon">
-          <a href={ "https://www.linkedin.com/company/duende4world/" } target="_blank">
+          <a href={ "https://twitter.com/duende4world" } target="_blank">
           <img src={twitter} alt="twitter-icon"/>
           </a>
           </div>
           <div className="hs_icon">
-          <a href={ "https://www.linkedin.com/company/duende4world/" } target="_blank">
+          <a href={ "https://www.instagram.com/duende4world/" } target="_blank">
           <img src={instagram} alt="instagram-icon"/>
           </a>
           </div>
           <div className="hs_icon">
-          <a href={ "https://www.linkedin.com/company/duende4world/" } target="_blank">
+          <a href={ "https://www.youtube.com/channel/UCNiWc8tG8ZRpMjXNlpBXRYg" } target="_blank">
           <img src={youTube} alt="youTube-icon"/>
           </a>
           </div>
@@ -100,7 +104,9 @@ function HeroSection() {
           </div>
         </div>
       </div>
-    </div>
+        </div>
+        </div>
+        </main>
   );
 }
 

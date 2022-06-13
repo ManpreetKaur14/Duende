@@ -20,8 +20,6 @@
 }
 
   .hero-container {
-  height: 100vh;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,19 +39,13 @@
   .bottom-section{
     display: flex;
     position: absolute;
-    width: 95%;
     margin-left: 20px;
-    margin-right: 20px;
-    bottom:50px;
+    width: auto;
+    bottom: 50px;
     left: 20px;
+    right: 20px;
     align-items: center;
     justify-content: space-between;
-  }
-
-  @media only screen and (max-width: 767px) {
-    .bottom-section {
-     width: auto;
-    }
   }
   .IconButton{
     font-size: 14px;
@@ -107,8 +99,7 @@
     border-radius: 50%;
   }
 
-  
-  @media screen and (max-width: 768px) {
+ @media screen and (max-width: 562px) {
     .hero-container > h1 {
       font-size: 30px;
       margin-top: -100px;
@@ -117,4 +108,21 @@
     .hero-container > p {
       font-size: 30px;
     }
-}  
+    .bottom-section{
+      display: block;
+      bottom:1px;
+    }
+    .play-pause-container{
+      padding-top: 10px;
+    }
+
+    .mute-unmute-button, .play-pause-button
+    {
+      height: 25px;
+      width: 25px;
+    }
+    .fa-pause, .fa-play, .fa-volume-up, .fa-volume-mute
+    {
+      font-size: 18px;
+    }
+} 

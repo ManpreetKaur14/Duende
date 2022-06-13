@@ -67,9 +67,20 @@ function Navbar() {
                     : `${styles.navbar_list}`
                 }
               >
-                <li> <Link to={`/about`}>About</Link></li>
-                <li>
-                  <Link to={`/faq`}>FAQ</Link>
+                <li onClick={
+                  () => {
+                    //goto about page
+                    window.location.href = "/about";
+                }}>About
+                  {/* <Link to={`/about`}>About</Link> */}
+                  </li>
+                <li onClick={
+                  () => {
+                    //goto about page
+                    window.location.href = "/faq";
+                }}>
+                  FAQ
+                  {/* <Link to={`/faq`}>FAQ</Link> */}
                 </li>
                 <li
                   onClick={() => setOpenDuendeWorldList(!openDuendeWorldList)}
@@ -85,10 +96,10 @@ function Navbar() {
                     >
                       {/* HIDDEN LIST */}
                       <ul className={styles.hidden_list}>
-                      <li> <Link to={{ pathname: "https://polygonscan.com/token/0x5e4ab6b3d3b3a8e61b3a58594a4a2ed9d614f604" }} target="_blank" >Whitepaper</Link></li>
-                      <li> <Link to={{ pathname: "https://polygonscan.com/token/0x5e4ab6b3d3b3a8e61b3a58594a4a2ed9d614f604" }} target="_blank">Token Contract Address</Link></li>
-                      <li> <Link to={`/about`}>Three.js</Link></li>
-                      <li> <Link to={`/about`}>Proof of Payment Stream</Link></li>
+                      <li><Link onClick={() => setOpenNav(!openNav)}to={{ pathname: "https://medium.com/duende4world/duende-cryptocurrency-and-its-exclusive-payment-platform-to-facilitate-cryptocurrency-mass-c0a7499d0e81" }} target="_blank" >Whitepaper</Link></li>
+                      <li> <Link onClick={() => setOpenNav(!openNav)} to={{ pathname: "https://polygonscan.com/token/0x5e4ab6b3d3b3a8e61b3a58594a4a2ed9d614f604" }} target="_blank">Token Contract Address</Link></li>
+                      <li> <Link onClick={() => setOpenNav(!openNav)} to={``}>Three.js</Link></li>
+                      <li> <Link onClick={() => setOpenNav(!openNav)}to={``}>Proof of Payment Stream</Link></li>
 
                       </ul>
                     </div>
@@ -106,8 +117,8 @@ function Navbar() {
                     >
                       {/* HIDDEN LIST */}
                       <ul className={styles.hidden_list}>
-                      <li> <Link to={`/terms`}>Terms of Services</Link></li>
-                      <li> <Link to={`/policy`}>Privacy Policy</Link></li>
+                      <li> <Link onClick={() => setOpenNav(!openNav)} to={`/terms`}>Terms of Services</Link></li>
+                      <li> <Link onClick={() => setOpenNav(!openNav)} to={`/policy`}>Privacy Policy</Link></li>
                       </ul>
                     </div>
                   </span>
