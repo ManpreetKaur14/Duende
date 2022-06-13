@@ -67,21 +67,16 @@ function Navbar() {
                     : `${styles.navbar_list}`
                 }
               >
-                <li onClick={
-                  () => {
-                    //goto about page
-                    window.location.href = "/about";
-                }}>About
-                  {/* <Link to={`/about`}>About</Link> */}
+               <Link to={`/about`}>
+                <li>
+                 About
                   </li>
-                <li onClick={
-                  () => {
-                    //goto about page
-                    window.location.href = "/faq";
-                }}>
+                </Link>
+                <Link to={`/faq`}>
+                <li>
                   FAQ
-                  {/* <Link to={`/faq`}>FAQ</Link> */}
                 </li>
+                </Link>
                 <li
                   onClick={() => setOpenDuendeWorldList(!openDuendeWorldList)}
                 >
